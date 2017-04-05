@@ -14,14 +14,6 @@ deployment:
   production:
     branch: master
     commands:
-      - sudo apt-get install -yqq expect
-      - expect -c '\
-          set timeout 10
-          spawn docker login
-          expect "Username:*"
-          send -- "$env(DOCKERUSER)\r"
-          expect "Password:*"
-          send -- "$env(DOCKERPASS)\r"
-          expect "*Login Succeeded*"'
+      - docker logic -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
       - chmod +x deploy.sh
       - sh ./deploy.sh
