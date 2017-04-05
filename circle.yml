@@ -10,3 +10,18 @@ test:
   override:
     - docker run warchantua/sample-node npm test
 
+deployment:
+  production:
+    branch: master
+    commands:
+      - sudo apt-get install -yqq expect
+      - expect -c '\
+          set timeout 10
+          spawn docker login
+          expect "Username:*"
+          send -- "$env(DOCKERUSER)\r"
+          expect "Password:*"
+          send -- "$env(DOCKERPASS)\r"
+          expect "*Login Succeeded*"'
+      - chmod +x deploy.sh
+      - sh ./deploy.sh
