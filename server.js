@@ -2,6 +2,7 @@ var config = require("./config");
 var db = require("knex")(config);
 var express = require("express");
 
+
 express()
  .get("*", function(req, res) {
     db("users").then(function(data) {
@@ -17,3 +18,4 @@ express()
     console.log("Express Server listening on port 80");
   })
 ;
+
