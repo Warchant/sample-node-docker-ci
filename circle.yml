@@ -10,6 +10,7 @@ test:
   override:
     - docker run warchantua/sample-node npm test
 
+
 deployment:
   production:
     branch: master
