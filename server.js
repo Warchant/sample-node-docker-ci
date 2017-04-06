@@ -1,13 +1,8 @@
-var config = require("./config");
-var db = require("knex")(config);
 var express = require("express");
-
 
 express()
  .get("*", function(req, res) {
-    db("users").then(function(data) {
-      res.send(data);
-    });
+    res.send("Hello There version 3!");
  })
  .listen(80, function(err) {
     if (err) {
@@ -18,4 +13,3 @@ express()
     console.log("Express Server listening on port 80");
   })
 ;
-

@@ -1,18 +1,16 @@
 {
-  "name": "app",
+  "name": "example-node-app",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
-  "dependencies": {
-    "express": "^4.13.4",
-    "knex": "^0.10.0",
-    "mysql": "^2.10.2",
-    "nodemon": "^1.9.1"
-  },
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 0"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.13.4"
+  },
+  "devDependencies": {}
 }

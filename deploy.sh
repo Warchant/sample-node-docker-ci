@@ -2,7 +2,7 @@
 docker build -t warchantua/sample-node .
 docker push warchantua/sample-node
 
-ssh -i ~/.ssh/gcp-instance-1 bogdan@35.185.237.248 << EOF 
+ssh bogdan@35.185.237.248 << EOF
 docker pull warchantua/sample-node:latest
 docker stop web || true
 docker rm web || true
